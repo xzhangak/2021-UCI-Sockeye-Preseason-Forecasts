@@ -1,4 +1,3 @@
-setwd("H:/Upper Cook Inlet/Forecasts_RB/Preseason Forecasts/Data")
 mydata=read.table("fishcrkBYTB2020.csv", sep = ",", skip = 1, header=T)
 names(mydata)[1] <- "YEAR"
 
@@ -261,11 +260,6 @@ fishcrk13<-function(d=mydata){
 fishcrk22<-function(d=mydata){
   library(forecast)
   library(smooth)
-  #Fish Creek sockeye forecast 
-  #input data
-  #d=read.table("fishcrkBYTB2020.csv", sep = ",", skip = 1, header=T)
-  #names(d)[1] <- "YEAR"
-  
   #using log(R2_2)~log(R2_1) (silbing model) 
   myvars <- c("YEAR","R2_1", "R2_2")
   fish=d[myvars] #select the variables
@@ -389,11 +383,6 @@ fishcrk22<-function(d=mydata){
 fishcrk23<-function(d=mydata){
   library(forecast)
   library(smooth)
-  #Fish Creek sockeye forecast 
-  #input data
-  #d=read.table("fishcrkBYTB2020.csv", sep = ",", skip = 1, header=T)
-  #names(d)[1] <- "YEAR"
-  
   #using log(R2_3)~log(R2_2) (silbing model) 
   myvars <- c("YEAR","R2_2", "R2_3")
   fish=d[myvars] #select the variables
@@ -591,13 +580,6 @@ run.predict<-function(yr){
   totalr
 }
 
-run.predict(2021)
-
-
-#Write results to a file
-path <- "H:/Upper Cook Inlet/Forecasts_RB/Preseason Forecasts/Results/Fish Creek"
-write.csv(mod.out, file.path(path, "R1.2 model predictions.csv"), row.names=FALSE)
-write.csv(merr, file.path(path, "R1.2 model errors.csv"))
-write.csv(s, file.path(path, "R1.2 best model by errors.csv"))
+run.predict(2021) #forecast 2021 runs
 
 
