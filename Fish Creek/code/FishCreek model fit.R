@@ -1,5 +1,3 @@
-#setwd("C:/Users/xzhang/Documents/Forecasts_RB/Upper_Cook_Inlet/2021/Fish")
-setwd("H:/Upper Cook Inlet/Forecasts_RB/Preseason Forecasts/Data")
 mydata=read.table("fishcrkBYTB2020.csv", sep = ",", skip = 1, header=T)
 names(mydata)[1] <- "YEAR"
 
@@ -605,7 +603,8 @@ staking <- na.omit(m)
 #staking all fitted values including 10-yr actual run and fitted with different Min.errors 
 
 #Write results to a file
-path <- "H:/Upper Cook Inlet/Forecasts_RB/Preseason Forecasts/Results/Fish Creek"
+#path <- "H:/Upper Cook Inlet/Forecasts_RB/Preseason Forecasts/Results/Fish Creek"
+path <- "results/"
 write.csv(staking, file.path(path, "model fitted.csv"))
     
 
