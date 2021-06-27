@@ -1,5 +1,3 @@
-#setwd("C:/Users/xzhang/Documents/Forecasts_RB/Upper_Cook_Inlet/2021/Kenai")
-setwd("H:/Upper Cook Inlet/Forecasts_RB/Preseason Forecasts/Data")
 mydata=read.table("KE_BRTB_ADJ.csv", sep = ",", header=T)
 
 #forecast return R1_2 
@@ -720,7 +718,7 @@ staking <- na.omit(m)
 #staking all fitted values including 10-yr actual run and fitted with different Min.errors 
 
 #Write results to a file
-path <- "H:/Upper Cook Inlet/Forecasts_RB/Preseason Forecasts/Results/Kenai"
+path <- "results/Kenai"
 write.csv(staking, file.path(path, "model fitted.csv"))
 
 
