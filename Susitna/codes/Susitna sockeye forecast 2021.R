@@ -1,4 +1,3 @@
-setwd("H:/Upper Cook Inlet/Forecasts_RB/Preseason Forecasts/Data")
 #Susitna sockeye forecast 
 #input data
 d=read.table("SusitnaRun2020.csv", sep = ",", skip = 1, header=T)
@@ -63,7 +62,7 @@ f2022<-cbind(f.yr,r03,r12,r13,r22,r23, subtotal, total.run)
 print(f2022, digits=5)
 
 #Write results to a file
-path <- "H:/Upper Cook Inlet/Forecasts_RB/Preseason Forecasts/Results/Susitna"
+path <- "results/"
 write.csv(bt, file.path(path, "brood-yr table.csv"))
 write.csv(f2021, file.path(path, "run forecast.csv"))
 
