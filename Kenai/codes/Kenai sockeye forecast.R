@@ -1,4 +1,4 @@
-mydata=read.table("data/KE_BRTB_ADJ.csv", sep = ",", header=T)
+mydata=read.table("KE_BRTB_ADJ.csv", sep = ",", header=T)
 
 #forecast return R1_2 
 kenai12<-function(d=mydata){
