@@ -1,6 +1,4 @@
-#setwd("C:/Users/xzhang/Documents/Forecasts_RB/Upper_Cook_Inlet/2021/Kenai")
-setwd("H:/Upper Cook Inlet/Forecasts_RB/Preseason Forecasts/Data")
-mydata=read.table("KE_BRTB_ADJ.csv", sep = ",", header=T)
+mydata=read.table("data/KE_BRTB_ADJ.csv", sep = ",", header=T)
 
 #forecast return R1_2 
 kenai12<-function(d=mydata){
@@ -702,5 +700,5 @@ run.predict<-function(yr){
   totalr
 }
 
-run.predict(yr=2021) 
+run.predict(yr=2021) #forecast next year's run size
 
