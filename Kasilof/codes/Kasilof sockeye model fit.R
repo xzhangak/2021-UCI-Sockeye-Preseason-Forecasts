@@ -1,5 +1,3 @@
-#setwd("C:/Users/xzhang/Documents/Forecasts_RB/Upper_Cook_Inlet/2021/Kasilof")
-setwd("H:/Upper Cook Inlet/Forecasts_RB/Preseason Forecasts/Data")
 mydata=read.table("KA_BRTB_ADJ.csv", sep = ",", header=T)
 
 kasilof12<-function(d=mydata){
@@ -173,13 +171,6 @@ kasilof12<-function(d=mydata){
   obs=obs[myvars]
   ma=merge(obs, m, by.x="YEAR", by.y="f.yr", all=T)
   
-  accuracy( sibling$pred, sibling$R1_2,)
-  accuracy( lnesc$pred, lnesc$R1_2)
-  accuracy( escp.ar$pred, escp.ar$R1_2)
-  accuracy(smolt$pred, smolt$R1_2)
-  accuracy(exsmooth$forecast.point, exsmooth$R1_2)
-  accuracy(ma$forecast.point, ma$R1_2)
-  
   comb<-cbind(obs$YEAR,obs$R1_2,sibling$pred, lnesc$pred, escp.ar$pred,
               smolt$pred, exsmooth$forecast.point,ma$forecast.point)
   comb[,1] = comb[,1]+ 4 #change blood year to return year
@@ -307,11 +298,6 @@ kasilof13<-function(d=mydata){
   myvars <- c("YEAR", "R1_3")
   obs=obs[myvars]
   ma=merge(obs, m, by.x="YEAR", by.y="f.yr", all=T)
-  
-  accuracy(sibling$pred, sibling$R1_3)
-  accuracy(smolt$pred, smolt$R1_3)
-  accuracy(exsmooth$forecast.point, exsmooth$R1_3)
-  accuracy(ma$forecast.point, ma$R1_3)
   
   comb<-cbind(obs$YEAR,obs$R1_3,sibling$pred, 
               smolt$pred, exsmooth$forecast.point,ma$forecast.point)
@@ -441,11 +427,6 @@ kasilof22<-function(d=mydata){
   myvars <- c("YEAR", "R2_2")
   obs=obs[myvars]
   ma=merge(obs, m, by.x="YEAR", by.y="f.yr", all=T)
-  
-  accuracy(sibling$pred, sibling$R2_2)
-  accuracy(esc$pred, esc$R2_2)
-  accuracy(exsmooth$forecast.point, exsmooth$R2_2)
-  accuracy(ma$forecast.point, ma$R2_2)
   
   comb<-cbind(obs$YEAR,obs$R2_2, sibling$pred, esc$pred, 
               exsmooth$forecast.point,ma$forecast.point)
@@ -598,14 +579,6 @@ kasilof23<-function(d=mydata){
   myvars <- c("YEAR", "R2_3")
   obs=obs[myvars]
   ma=merge(obs, m, by.x="YEAR", by.y="f.yr", all=T)
-  
-  accuracy(sibling$pred, sibling$R2_3)
-  #accuracy( sibling.ar$pred, sibling.ar$R2_3)
-  accuracy(sibling2$pred, sibling2$R2_3)
-  #accuracy(sibling.ar2$pred, sibling.ar2$R2_3)
-  accuracy(smolt$pred, smolt$R2_3)
-  accuracy(exsmooth$forecast.point, exsmooth$R2_3)
-  accuracy(ma$forecast.point, ma$R2_3)
   
   comb<-cbind(obs$YEAR,obs$R2_3, sibling$pred,sibling2$pred, smolt$pred, 
               exsmooth$forecast.point,ma$forecast.point)
